@@ -1,7 +1,16 @@
 aid: resulticks
 name: Resulticks
-description: Resulticks is a company surfaced as a portfolio company of 500-global and added to the API
-  Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Resulticks is a next-generation, data-driven omnichannel marketing automation
+  and audience engagement platform built for real-time customer engagement.
+  Operating under the RESUL brand, it combines a cookie-independent customer data
+  platform (CDP) with omnichannel campaign orchestration across email, SMS,
+  push, WhatsApp, web, and social channels, plus AI-assisted audience building
+  and analytics. Resulticks targets enterprise marketers across industries and
+  regions, and is backed by 500 Global. This profile was surfaced as a portfolio
+  lead and enriched from the company's public marketing site; Resulticks does not
+  publish a public developer portal, API reference, or OpenAPI definition, so no
+  API-specification artifacts are catalogued here.
 url: https://raw.githubusercontent.com/api-evangelist/resulticks/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -9,17 +18,48 @@ x-backed-by:
 - 500-global
 x-tier: stub
 x-tier-reason: portfolio-lead
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
 tags:
 - Company
+- Marketing
+- Marketing Automation
+- Omnichannel
+- Customer Engagement
+- Customer Data Platform
+- MarTech
+image: https://www.resulticks.com/images/apple-touch-icon.png
 apis: []
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+x-enrichment:
+  date: '2026-07-20'
+  status: minimal
+  artifacts_added: 1
+  pass: local-v1
 common:
+- type: DomainSecurity
+  url: security/resulticks-domain-security.yml
 - type: Website
-  url: https://interakt.co
+  url: https://www.resulticks.com/
+- type: PrivacyPolicy
+  url: https://www.resulticks.com/privacy-policy.html
+- type: TermsOfService
+  url: https://www.resulticks.com/terms-and-conditions.html
+- type: Support
+  url: https://www.resulticks.com/contact-us.html
