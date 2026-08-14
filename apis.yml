@@ -1,16 +1,21 @@
 aid: resulticks
 name: Resulticks
 description: >-
-  Resulticks is a next-generation, data-driven omnichannel marketing automation
-  and audience engagement platform built for real-time customer engagement.
-  Operating under the RESUL brand, it combines a cookie-independent customer data
-  platform (CDP) with omnichannel campaign orchestration across email, SMS,
-  push, WhatsApp, web, and social channels, plus AI-assisted audience building
-  and analytics. Resulticks targets enterprise marketers across industries and
-  regions, and is backed by 500 Global. This profile was surfaced as a portfolio
-  lead and enriched from the company's public marketing site; Resulticks does not
-  publish a public developer portal, API reference, or OpenAPI definition, so no
-  API-specification artifacts are catalogued here.
+  Resulticks is an enterprise omnichannel marketing automation and audience
+  engagement platform, operating under the RESUL brand. It pairs a
+  cookie-independent customer data platform with real-time campaign
+  orchestration across email, SMS, WhatsApp, RCS, LINE, web and mobile push,
+  in-app messaging, voice, social and paid channels, plus audience scoring,
+  Audience 360 journey analytics, a form generator and AI-assisted audience
+  building. Resulticks publishes a public documentation portal at
+  gud.resulticks.com carrying a REST API reference — account setup, data
+  ingestion, audience and target-list management, communication creation and
+  scheduling, and response analytics — against the base domain
+  https://apis.resu.io, alongside web, Flutter, React Native, Cordova and iOS
+  SDK guides. It ships no machine-readable API definition (no OpenAPI,
+  AsyncAPI, GraphQL schema or MCP server), no public pricing, and no status or
+  changelog page; the API host itself is not reachable from the public internet
+  and is customer-scoped. Resulticks is backed by 500 Global.
 url: https://raw.githubusercontent.com/api-evangelist/resulticks/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -19,19 +24,21 @@ x-backed-by:
 x-tier: stub
 x-tier-reason: portfolio-lead
 accessModel:
-  pricing: unknown
-  onboarding: unknown
+  pricing: enterprise
+  onboarding: sales
   trial: false
   try_now: false
   public: false
-  label: Unknown
-  confidence: low
-  source: []
-  generated: '2026-07-22'
-  method: derived
+  label: Contact sales
+  confidence: high
+  source:
+  - https://www.resulticks.com/meeting-request.html
+  - https://www.go.resul.io/book-a-meeting.html
+  generated: '2026-08-13'
+  method: searched
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-20'
+modified: '2026-08-13'
 tags:
 - Company
 - Marketing
@@ -40,17 +47,61 @@ tags:
 - Customer Engagement
 - Customer Data Platform
 - MarTech
+- Campaign Management
+- Audience
+- Analytics
+- Messaging
+- SMS
+- Email
+- Push Notifications
+- WhatsApp
 image: https://www.resulticks.com/images/apple-touch-icon.png
-apis: []
+apis:
+- aid: resulticks-web-api
+  name: Resul Web API
+  description: >-
+    The Resul (Resulticks) Web API is a JSON REST API served from the
+    https://apis.resu.io base domain, documented publicly at gud.resulticks.com.
+    Its call surface is grouped into six documented categories: API Keys
+    (accounts and permissions on Resul objects), Account Setup (account
+    specification for communication execution), Data Ingestion (audience lists,
+    suppression rules, recipient records), Communication (communication types,
+    setup, design and scheduling), Communication response analytics
+    (consolidated metrics for reporting), and Statistical sharing (pushing
+    communication metrics to client data sources). No OpenAPI definition is
+    published; the API host does not accept connections from the public
+    internet.
+  humanURL: https://gud.resulticks.com/API-reference/introduction/
+  baseURL: https://apis.resu.io
+  tags:
+  - Marketing Automation
+  - Audience
+  - Communication
+  - Analytics
+  properties:
+  - type: Documentation
+    url: https://gud.resulticks.com/API-reference/introduction/
+  - type: APIReference
+    url: https://gud.resulticks.com/API-reference/API-management/web-API-controllers/
+  - type: Authentication
+    url: authentication/resulticks-authentication.yml
+  - type: Conventions
+    url: conventions/resulticks-conventions.yml
+  - type: ErrorCatalog
+    url: errors/resulticks-problem-types.yml
+  - type: RateLimits
+    url: rate-limits/resulticks-rate-limits.yml
+  - type: Lifecycle
+    url: lifecycle/resulticks-lifecycle.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
 x-enrichment:
-  date: '2026-07-20'
-  status: minimal
-  artifacts_added: 1
+  date: '2026-08-13'
+  status: enriched
+  artifacts_added: 12
   pass: local-v1
 common:
 - type: DomainSecurity
@@ -63,3 +114,37 @@ common:
   url: https://www.resulticks.com/terms-and-conditions.html
 - type: Support
   url: https://www.resulticks.com/contact-us.html
+- type: DeveloperPortal
+  url: https://gud.resulticks.com/
+- type: Documentation
+  url: https://gud.resulticks.com/
+- type: APIReference
+  url: https://gud.resulticks.com/API-reference/introduction/
+- type: GettingStarted
+  url: https://gud.resulticks.com/Get-started/introduction/
+- type: Blog
+  url: https://www.go.resul.io/blog
+- type: GitHubOrganization
+  url: https://github.com/resulticks
+- type: Authentication
+  url: authentication/resulticks-authentication.yml
+- type: Conventions
+  url: conventions/resulticks-conventions.yml
+- type: Packages
+  url: packages/resulticks-packages.yml
+- type: SDKs
+  url: packages/resulticks-packages.yml
+- type: Components
+  url: components/resulticks-components.yml
+- type: ErrorCatalog
+  url: errors/resulticks-problem-types.yml
+- type: RateLimits
+  url: rate-limits/resulticks-rate-limits.yml
+- type: Plans
+  url: plans/resulticks-plans-pricing.yml
+- type: Lifecycle
+  url: lifecycle/resulticks-lifecycle.yml
+- type: Conformance
+  url: conformance/resulticks-conformance.yml
+- type: LLMsTxt
+  url: llms/resulticks-llms.txt
