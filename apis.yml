@@ -36,7 +36,7 @@ accessModel:
   - https://www.go.resul.io/book-a-meeting.html
   generated: '2026-08-13'
   method: searched
-specificationVersion: '0.20'
+specificationVersion: '0.23'
 created: '2026-07-17'
 modified: '2026-08-13'
 tags:
