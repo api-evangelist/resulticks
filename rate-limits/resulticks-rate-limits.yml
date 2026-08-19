@@ -1,0 +1,44 @@
+generated: '2026-08-13'
+method: searched
+source: https://gud.resulticks.com/API-reference/API-management/API-gateway/
+docs: https://gud.resulticks.com/API-reference/API-management/API-gateway/
+limit_count: 0
+note: >-
+  Resulticks documents that throttling EXISTS but publishes no numbers. The API
+  gateway page states throttles can be defined "at the account, application,
+  API, or user level" and that "reservations are applicable on the API call
+  requests based on Resul subscriptions" — i.e. the actual ceiling is a
+  contractual, per-subscription value not published on the public docs portal.
+  Recorded as limit_count 0: an honest zero, not an unchecked field.
+throttling:
+  documented: true
+  numeric_limits_published: false
+  scopes:
+  - account
+  - application
+  - api
+  - user
+  determined_by: Resul subscription tier
+  behaviour: >-
+    "When a throttle is triggered, a user response gets disconnected, or it
+    might just reduce the response rate." No HTTP status code is named for the
+    throttled case, and the two described behaviours (connection drop vs.
+    response-rate reduction) are not distinguished by any documented signal.
+limits: []
+response_headers: []
+exhaustion_status: null
+retry_after: null
+gaps:
+- No X-RateLimit-* or RFC 9331 RateLimit-* response headers are documented.
+- No Retry-After header is documented.
+- No HTTP status code is named for a throttled request (429 is not mentioned).
+- No numeric request-per-window figure appears anywhere on the public docs portal.
+- >-
+  An agent cannot detect or back off from throttling: the only documented
+  outcome is a disconnected response, which is indistinguishable from a network
+  failure.
+x-evidence:
+- url: https://gud.resulticks.com/API-reference/API-management/API-gateway/
+  status: 200
+- url: https://gud.resulticks.com/API-reference/API-management/web-API-controllers/
+  status: 200

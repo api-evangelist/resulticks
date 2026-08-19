@@ -1,0 +1,109 @@
+generated: '2026-08-13'
+method: probed
+source: live HTTP probes on 2026-08-13
+note: >-
+  No /.well-known/ document is served on any Resulticks host. Recorded as an
+  honest absence — NO WellKnown, SecurityTxt, or AgentCard pointer is emitted in
+  apis.yml, because none of these paths returned a real document.
+hosts:
+- host: https://www.resulticks.com
+  role: corporate website
+  result: all-404
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: https://gud.resulticks.com
+  role: documentation portal
+  result: soft-404
+  warning: >-
+    SOFT 404 — this host answers HTTP 200 with an identical 2,917-byte HTML
+    application shell for EVERY /.well-known/* path, and for /llms.txt,
+    /openapi.json and /swagger.json as well. None of these are documents. Every
+    row below is a MISS despite the 200 status; do not credit this host with a
+    well-known surface.
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    content_type: text/html
+    bytes: 2917
+    document: false
+  - path: /.well-known/openid-configuration
+    status: 200
+    content_type: text/html
+    bytes: 2917
+    document: false
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    content_type: text/html
+    bytes: 2917
+    document: false
+  - path: /.well-known/api-catalog
+    status: 200
+    content_type: text/html
+    bytes: 2917
+    document: false
+  - path: /.well-known/ai-plugin.json
+    status: 200
+    content_type: text/html
+    bytes: 2917
+    document: false
+  - path: /.well-known/agent-card.json
+    status: 200
+    content_type: text/html
+    bytes: 2917
+    document: false
+  - path: /.well-known/agent.json
+    status: 200
+    content_type: text/html
+    bytes: 2917
+    document: false
+- host: https://resu.io
+  role: SDK / tracking domain
+  result: all-404
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: https://apis.resu.io
+  role: API base domain (per the provider's own docs)
+  result: unreachable
+  note: >-
+    Resolves in DNS to 35.227.61.169 but refused TCP connections on both 443 and
+    80 from the public internet on 2026-08-13, so no /.well-known/ path could be
+    probed. Consistent with an allowlisted, customer-only API gateway.
+summary:
+  documents_found: 0
+  security_txt: false
+  openid_configuration: false
+  oauth_authorization_server: false
+  api_catalog: false
+  ai_plugin: false
+  agent_card: false
+robots:
+  url: https://www.resulticks.com/robots.txt
+  status: 200
+  allows_all: true
+  sitemap: https://www.resulticks.com/sitemap.xml

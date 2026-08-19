@@ -1,0 +1,37 @@
+generated: '2026-08-13'
+method: searched
+source: https://www.resulticks.com/sitemap.xml
+plan_count: 0
+note: >-
+  Resulticks publishes no public pricing. The corporate sitemap
+  (www.resulticks.com/sitemap.xml, 12 URLs) contains no pricing page, and the
+  product site go.resul.io returns 404 for /pricing. The commercial path is a
+  meeting request: www.resulticks.com/meeting-request.html and
+  go.resul.io/book-a-meeting.html. This is an enterprise contact-sales model, so
+  plan_count is a real zero rather than a gap in our search.
+model: contact-sales
+public_pricing: false
+free_tier: false
+trial: unknown
+plans: []
+commercial_contacts:
+- url: https://www.resulticks.com/meeting-request.html
+  label: Meeting request
+- url: https://www.go.resul.io/book-a-meeting.html
+  label: Book a meeting
+- url: https://www.resulticks.com/contact-us.html
+  label: Contact us
+related:
+  note: >-
+    The API gateway documentation confirms commercial tiering exists behind the
+    sales process — "reservations are applicable on the API call requests based
+    on Resul subscriptions" — but no subscription tier is named or priced
+    publicly.
+  see: rate-limits/resulticks-rate-limits.yml
+x-evidence:
+- url: https://www.resulticks.com/sitemap.xml
+  status: 200
+- url: https://www.go.resul.io/pricing
+  status: 404
+- url: https://www.resulticks.com/pricing
+  status: 404

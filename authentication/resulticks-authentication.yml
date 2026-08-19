@@ -1,0 +1,81 @@
+generated: '2026-08-13'
+method: searched
+source: https://gud.resulticks.com/API-reference/API-management/API-keys/
+docs: https://gud.resulticks.com/API-reference/API-management/API-keys/
+note: >-
+  Derived from the Resulticks (RESUL) public documentation portal at
+  gud.resulticks.com. Resulticks publishes no OpenAPI/Swagger definition, so no
+  securitySchemes could be read mechanically; this profile is transcribed from
+  the provider's own API-management reference pages.
+summary:
+  types:
+  - apiKey
+  - oauth2
+  api_key_in:
+  - unknown
+  oauth2_flows: []
+  spec_backed: false
+schemes:
+- name: ResulApiKey
+  type: apiKey
+  description: >-
+    An API key is issued by a credentials endpoint rather than a console. The
+    documented call is GET https://apis.resu.io/Apirsltks/Credentials with
+    Username (string) and Password (string) parameters; a 200 response returns
+    an `apiKey` (string) and a 401 returns Unauthorized. The docs do not state
+    which header or query parameter the returned key is subsequently presented
+    in, nor a key TTL/rotation policy.
+  credentials_endpoint: https://apis.resu.io/Apirsltks/Credentials
+  credentials_method: GET
+  credentials_parameters:
+  - name: Username
+    type: string
+  - name: Password
+    type: string
+  responses:
+  - status: 200
+    returns: apiKey (string)
+  - status: 401
+    returns: Unauthorized
+  in: unknown
+  parameter_name: unknown
+  sources:
+  - https://gud.resulticks.com/API-reference/API-management/API-keys/
+- name: OAuth2
+  type: oauth2
+  description: >-
+    The API gateway page states "the third-party systems utilize the OAuth
+    protocol for authenticating REST API calls." No authorization URL, token
+    URL, grant type, or scope list is published anywhere in the public
+    documentation, so the flow cannot be modelled.
+  flows: []
+  authorization_url: null
+  token_url: null
+  scopes_published: false
+  sources:
+  - https://gud.resulticks.com/API-reference/API-management/API-gateway/
+authorization:
+  model: role-and-permission
+  description: >-
+    The API reference exposes Manage role and Manage permission pages,
+    indicating account-level RBAC over Resul objects rather than OAuth scopes.
+    The "API Keys" call category is documented as being "for management of
+    accounts and permissions on Resul objects."
+  docs:
+  - https://gud.resulticks.com/API-reference/manage-role/
+  - https://gud.resulticks.com/API-reference/manage-permission/
+gaps:
+- No OAuth authorization/token endpoint, grant type, or scope reference is published.
+- The header or parameter carrying the issued apiKey on subsequent calls is not documented.
+- No key rotation, expiry, or revocation policy is published.
+- >-
+  The base host apis.resu.io resolves in DNS (35.227.61.169) but refused TCP on
+  both 443 and 80 from the public internet on 2026-08-13, so no live
+  authentication behaviour could be observed.
+x-evidence:
+- url: https://gud.resulticks.com/API-reference/API-management/API-keys/
+  status: 200
+- url: https://gud.resulticks.com/API-reference/API-management/API-gateway/
+  status: 200
+- url: https://gud.resulticks.com/API-reference/API-management/web-API-controllers/
+  status: 200

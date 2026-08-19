@@ -1,0 +1,118 @@
+generated: '2026-08-13'
+method: searched
+source: https://gud.resulticks.com/API-reference/API-management/web-API-controllers/
+docs: https://gud.resulticks.com/API-reference/introduction/
+note: >-
+  Cross-cutting request/response semantics for the Resul (Resulticks) Web API,
+  transcribed from the provider's public documentation portal. No OpenAPI
+  definition is published, so nothing here is derived from a spec.
+architecture:
+  style: REST
+  description: >-
+    "All Resul APIs are organized around REST. All API service calls to Resul
+    are made to the https://apis.resu.io base domain. The APIs are designed to
+    have predictable, straightforward URLs and to use HTTP response codes."
+  base_url: https://apis.resu.io
+  implementation: >-
+    ASP.NET Web API controllers. The docs state a controller class name "must
+    end with 'Controller'" and derive from HttpApiController, and that the
+    framework routes on the HTTP verb.
+  transports:
+  - HTTP/HTTPS REST
+  - SOAP / XML web services (the gateway page notes SOAP-based web services
+    using XML and JSON are also available for data-model access)
+http_methods:
+- GET
+- POST
+- PUT
+- DELETE
+content:
+  request_format: JSON
+  response_format: JSON
+  note: >-
+    "JSON responses are returned in all responses from the API, including the
+    response error messages."
+authentication:
+  style: api-key issued via a credentials call; OAuth referenced for third-party
+    systems
+  see: authentication/resulticks-authentication.yml
+idempotency:
+  supported: false
+  evidence: >-
+    No idempotency key, request-deduplication header, or retry-safety contract
+    appears anywhere in the public API reference. Recorded as absent, not
+    unknown — the API-management section is complete enough that an
+    idempotency contract would appear there if one existed.
+pagination:
+  style: page-number
+  supported: true
+  parameters:
+  - name: page
+    description: 1-based page number
+  - name: CurrentPage
+    description: Current page indicator sent alongside `page` in list-view calls
+  - name: sortBy
+    description: Field name to sort on
+  - name: sortDescending
+    description: Boolean sort direction
+  - name: filter
+  - name: search
+  - name: StartDate
+    description: Range start, observed format "01-Apr-2021"
+  - name: EndDate
+    description: Range end, observed format "05-Sep-2021"
+  evidence: >-
+    Observed on the SegmentationLists list-view request body documented at
+    /API-reference/modules/audience/target-list/. Parameters are sent in the
+    JSON request body rather than as query strings.
+  response_fields: []
+  note: >-
+    No total-count, next-cursor, or has-more response field is documented, so a
+    client cannot determine the last page from the response contract.
+error_envelope:
+  format: proprietary-json
+  rfc9457: false
+  shape: '{"IsError": "false", "Message": "Success", "RedirectUrl": "url"}'
+  fields:
+  - name: IsError
+    note: >-
+      Documented inconsistently as both the string "false" and the boolean
+      false across two adjacent examples on the same page.
+  - name: Message
+  - name: RedirectUrl
+  see: errors/resulticks-problem-types.yml
+versioning:
+  scheme: none-published
+  current: null
+  evidence: >-
+    No version segment appears in the one fully-qualified documented path
+    (/Apirsltks/Credentials), and no versioning, deprecation, or sunset policy
+    is published on the docs portal.
+  see: lifecycle/resulticks-lifecycle.yml
+rate_limiting:
+  supported: true
+  style: throttling at account, application, API, or user level
+  published_limits: false
+  response_headers: []
+  see: rate-limits/resulticks-rate-limits.yml
+request_tracing:
+  request_id_header: null
+  supported: unknown
+field_expansion:
+  supported: unknown
+metadata:
+  supported: unknown
+gaps:
+- No idempotency contract.
+- No RFC 9457 problem+json; a proprietary IsError/Message envelope instead.
+- No documented rate-limit response headers.
+- No request-id / correlation-id header documented.
+- No published API version identifier.
+- Pagination has no total-count or next-page field in the response contract.
+x-evidence:
+- url: https://gud.resulticks.com/API-reference/API-management/web-API-controllers/
+  status: 200
+- url: https://gud.resulticks.com/API-reference/modules/audience/target-list/
+  status: 200
+- url: https://gud.resulticks.com/API-reference/API-management/API-gateway/
+  status: 200

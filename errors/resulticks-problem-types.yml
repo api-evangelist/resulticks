@@ -1,0 +1,66 @@
+generated: '2026-08-13'
+method: searched
+source: https://gud.resulticks.com/API-reference/
+format: proprietary-json
+rfc9457: false
+note: >-
+  Resulticks publishes no OpenAPI, so nothing here is derived from 4xx/5xx
+  response objects in a spec. Every entry below is transcribed from a response
+  example or a status/description pair printed on the public API reference. The
+  API does not use application/problem+json; it returns a proprietary envelope.
+envelope:
+  shape: '{"IsError": "false", "Message": "Success", "RedirectUrl": "url"}'
+  fields:
+  - name: IsError
+    type: inconsistent
+    note: >-
+      Documented as the STRING "false" in one example and the BOOLEAN false in
+      the next example on the same page
+      (/API-reference/modules/audience/target-list/). A client cannot rely on
+      the JSON type of the error flag.
+  - name: Message
+    type: string
+    note: Carries "Success" on the happy path; the failure vocabulary is not published.
+  - name: RedirectUrl
+    type: string
+  source: https://gud.resulticks.com/API-reference/modules/audience/target-list/
+  note: >-
+    "JSON responses are returned in all responses from the API, including the
+    response error messages."
+    (/API-reference/API-management/web-API-controllers/)
+problems:
+- status: 401
+  title: Unauthorized
+  description: >-
+    Returned by the credentials call when the supplied Username/Password pair is
+    rejected.
+  source_operation: GET https://apis.resu.io/Apirsltks/Credentials
+  source: https://gud.resulticks.com/API-reference/API-management/API-keys/
+- status: 200
+  title: Success
+  description: >-
+    Note that a 200 does NOT imply success — the envelope carries its own
+    IsError/Message pair, so a caller must inspect the body rather than the
+    status line.
+  source: https://gud.resulticks.com/API-reference/modules/audience/target-list/
+gaps:
+- >-
+  No error-code registry is published. Beyond the single documented 401, no
+  4xx/5xx status is enumerated anywhere on the docs portal.
+- >-
+  No error `type` URIs, no machine-readable error codes, and no remediation
+  guidance.
+- >-
+  The IsError field's JSON type is documented inconsistently (string vs boolean)
+  within a single page.
+- >-
+  Success and failure share HTTP 200, so status-code-based error handling does
+  not work against this API.
+- No throttling/rate-limit error status is documented (see rate-limits/).
+x-evidence:
+- url: https://gud.resulticks.com/API-reference/API-management/API-keys/
+  status: 200
+- url: https://gud.resulticks.com/API-reference/modules/audience/target-list/
+  status: 200
+- url: https://gud.resulticks.com/API-reference/API-management/web-API-controllers/
+  status: 200

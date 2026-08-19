@@ -1,0 +1,200 @@
+generated: '2026-08-13'
+method: searched
+source: >-
+  npm registry, pub.dev, CocoaPods trunk, GitHub (github.com/resulticks and
+  github.com/ResulticksInc), and the Resulticks SDK reference at
+  https://gud.resulticks.com/SDK-reference/
+note: >-
+  Every entry below was confirmed first-party from registry metadata: the npm
+  packages are all published by the `resulticks` npm maintainer account, the
+  CocoaPods pod is owned by `ResulticksInc`, and the Dart/Flutter packages
+  declare github.com/ResulticksInc homepages. Versions and dates were read from
+  the registry metadata endpoints on 2026-08-13.
+packages:
+- language: javascript
+  platform: react-native
+  registry: npm
+  name: react-native-resulticks-sdk
+  url: https://www.npmjs.com/package/react-native-resulticks-sdk
+  install: npm install react-native-resulticks-sdk
+  repository: https://github.com/ResulticksInc/react-native-resulticks-sdk
+  license: MIT
+  description: React Native SDK for Resulticks - Customer engagement and analytics
+    platform
+  version: 2.8.2
+  published: '2026-03-23'
+  official: true
+- language: javascript
+  platform: cordova-ios
+  registry: npm
+  name: reiossdk-plugin
+  url: https://www.npmjs.com/package/reiossdk-plugin
+  install: npm install reiossdk-plugin
+  repository: https://github.com/resulticks/RNiOSPlugin
+  license: MIT
+  version: 1.0.7
+  published: '2020-04-03'
+  official: true
+  note: >-
+    Published by the individual account `sivakumarsr` rather than the
+    `resulticks` org account, but the declared repository is under the
+    provider's own github.com/resulticks org. Last release 2020-04-03 — over
+    six years stale, and the Cordova SDK it backs is still documented as
+    current on the docs portal.
+- language: javascript
+  platform: react
+  registry: npm
+  name: '@resulticks/email-builder'
+  url: https://www.npmjs.com/package/@resulticks/email-builder
+  install: npm install @resulticks/email-builder
+  description: A powerful visual builder for creating beautiful web content with React
+  version: 1.0.204
+  published: '2025-11-05'
+  official: true
+  note: Embeddable UI component library — see components/resulticks-components.yml.
+- language: javascript
+  platform: react
+  registry: npm
+  name: '@resulticks/rsp-components'
+  url: https://www.npmjs.com/package/@resulticks/rsp-components
+  install: npm install @resulticks/rsp-components
+  license: ISC
+  description: A powerful visual builder for creating beautiful web content with React
+  version: 1.0.48
+  published: '2025-10-10'
+  official: true
+- language: javascript
+  platform: react
+  registry: npm
+  name: '@resulticks/trustsignal-rcs'
+  url: https://www.npmjs.com/package/@resulticks/trustsignal-rcs
+  install: npm install @resulticks/trustsignal-rcs
+  description: TrustSignal RCS template management library
+  version: 0.18.0
+  published: '2026-08-12'
+  official: true
+- language: javascript
+  platform: react
+  registry: npm
+  name: '@resulticks/trustsignal-wa-hsm'
+  url: https://www.npmjs.com/package/@resulticks/trustsignal-wa-hsm
+  install: npm install @resulticks/trustsignal-wa-hsm
+  description: React components for WhatsApp HSM (highly structured message) templates
+  version: 0.97.0
+  published: '2026-08-05'
+  official: true
+- language: dart
+  platform: flutter
+  registry: pub.dev
+  name: resfluttersdk
+  url: https://pub.dev/packages/resfluttersdk
+  install: flutter pub add resfluttersdk
+  version: 2.0.4
+  published: '2025-09-29'
+  official: true
+  note: >-
+    Current Flutter SDK, matching the docs portal's
+    /SDK-reference/mobile-SDK-integration-flutter/ section. pub.dev reports no
+    verified publisher (publisherId is null), so first-party status rests on the
+    package description matching Resulticks' own SDK copy verbatim and the
+    sibling packages declaring github.com/ResulticksInc homepages.
+- language: dart
+  platform: flutter
+  registry: pub.dev
+  name: refluttersdk
+  url: https://pub.dev/packages/refluttersdk
+  install: flutter pub add refluttersdk
+  repository: https://github.com/ResulticksInc/refluttersdk
+  version: 1.2.2
+  published: '2024-02-20'
+  official: true
+  note: Superseded by resfluttersdk 2.x; last release 2024-02-20.
+- language: dart
+  platform: flutter-web
+  registry: pub.dev
+  name: reflutterweb
+  url: https://pub.dev/packages/reflutterweb
+  install: flutter pub add reflutterweb
+  repository: https://github.com/ResulticksInc/reflutterweb
+  version: 1.0.1
+  published: '2023-05-12'
+  official: true
+- language: swift
+  platform: ios
+  registry: cocoapods
+  name: REIOSSDK
+  url: https://cocoapods.org/pods/REIOSSDK
+  install: pod 'REIOSSDK'
+  owner: ResulticksInc
+  version: 3.0.0
+  published: '2022-07-07'
+  official: true
+  note: >-
+    Only one version has ever been pushed to the CocoaPods trunk (3.0.0,
+    2022-07-07). The provider has since moved iOS distribution to Swift Package
+    Manager — see the REIOSSDK-SPM entry.
+- language: swift
+  platform: ios
+  registry: swift-package-manager
+  name: REIOSSDK-SPM
+  url: https://github.com/resulticks/REIOSSDK-SPM
+  install: https://github.com/resulticks/REIOSSDK-SPM.git
+  version: null
+  published: '2026-02-27'
+  official: true
+  note: >-
+    SPM manifest repository under the provider's own GitHub org. No git tags
+    are published on the manifest repo, so a consumer pinning by version has
+    nothing to pin to — version recorded as null deliberately. The binary it
+    references (resulticks/REIOSSDK-binary) does carry releases, latest 1.0.3
+    dated 2026-02-27.
+- language: swift
+  platform: ios
+  registry: github-release
+  name: REIOSSDK-binary
+  url: https://github.com/resulticks/REIOSSDK-binary
+  version: 1.0.3
+  published: '2026-02-27'
+  official: true
+  note: Binary XCFramework distribution consumed by REIOSSDK-SPM.
+absent:
+- registry: pypi
+  name: resulticks
+  status: 404
+  note: No Python SDK published.
+- registry: maven-central
+  query: resulticks
+  results: 0
+  note: >-
+    The Android SDK is documented on the portal
+    (/SDK-reference/mobile-SDK-integration-flutter/android/installing-SDK) but
+    no Maven Central coordinate was found; Android distribution appears to be
+    direct/gated rather than via a public registry.
+summary:
+  official_count: 12
+  registries:
+  - npm
+  - pub.dev
+  - cocoapods
+  - swift-package-manager
+  - github-release
+  languages:
+  - javascript
+  - dart
+  - swift
+  server_side_sdks: 0
+  note: >-
+    Every first-party package Resulticks publishes is a client-side tracking or
+    UI library. There is no server-side SDK in any language for the Resul Web
+    API documented at apis.resu.io — an integrator calls that API by hand.
+x-evidence:
+- url: https://registry.npmjs.org/react-native-resulticks-sdk
+  status: 200
+- url: https://pub.dev/api/packages/resfluttersdk
+  status: 200
+- url: https://trunk.cocoapods.org/api/v1/pods/REIOSSDK
+  status: 200
+- url: https://api.github.com/repos/resulticks/REIOSSDK-binary/releases
+  status: 200
+- url: https://pypi.org/pypi/resulticks/json
+  status: 404

@@ -1,0 +1,100 @@
+generated: '2026-08-13'
+method: searched
+source: >-
+  npm registry (@resulticks scope) and
+  https://gud.resulticks.com/SDK-reference/SDK-reference-guide/sdk-overview/
+note: >-
+  Client-side and embeddable surfaces Resulticks ships, distinct from the
+  server-side SDKs in packages/ (of which there are none). Confirmed first-party
+  from the npm `@resulticks` scope and the provider's own SDK reference.
+families:
+- family: content-builders
+  description: >-
+    React component libraries that embed Resulticks' visual content authoring
+    experience into a host application.
+  components:
+  - name: '@resulticks/email-builder'
+    kind: react-component-library
+    registry: npm
+    url: https://www.npmjs.com/package/@resulticks/email-builder
+    version: 1.0.204
+    published: '2025-11-05'
+    description: A powerful visual builder for creating beautiful web content with
+      React
+  - name: '@resulticks/rsp-components'
+    kind: react-component-library
+    registry: npm
+    url: https://www.npmjs.com/package/@resulticks/rsp-components
+    version: 1.0.48
+    published: '2025-10-10'
+- family: messaging-template-components
+  description: >-
+    Drop-in React components for authoring and managing channel message
+    templates, published under the TrustSignal product line.
+  components:
+  - name: '@resulticks/trustsignal-wa-hsm'
+    kind: react-component
+    registry: npm
+    url: https://www.npmjs.com/package/@resulticks/trustsignal-wa-hsm
+    version: 0.97.0
+    published: '2026-08-05'
+    description: >-
+      "This package exposes two React components that you can drop into your
+      app" — WhatsApp HSM (highly structured message) template components.
+  - name: '@resulticks/trustsignal-rcs'
+    kind: react-component-library
+    registry: npm
+    url: https://www.npmjs.com/package/@resulticks/trustsignal-rcs
+    version: 0.18.0
+    published: '2026-08-12'
+    description: TrustSignal RCS template management library
+- family: tracking-sdk
+  description: >-
+    The Resulticks Web SDK — a proprietary tagging snippet embedded in brand web
+    properties for identity resolution, journey tracking and conversion
+    attribution. Distributed as a generated code snippet from within the
+    platform rather than from a public registry.
+  distribution: in-platform code snippet
+  registry: null
+  version: null
+  published: null
+  note: >-
+    The snippet is generated per account inside the Resulticks application, so
+    there is no public registry entry and no version a consumer could pin. The
+    tracking domain resu.io serves the SDK description page publicly
+    (https://resu.io/, HTTP 200) but not a versioned artifact.
+  docs:
+  - https://gud.resulticks.com/SDK-reference/SDK-reference-guide/SDK-capabilities/web-app/
+  - https://gud.resulticks.com/SDK-reference/SDK-reference-guide/onboarding-process-for-enabling-SDK-capabilities/web-SDK-capabilities/
+  - https://gud.resulticks.com/SDK-reference/SDK-reference-guide/web-SDK-support-and-compatibility/
+- family: hosted-forms
+  description: >-
+    A form generator that produces hosted subscription / KYC capture forms
+    bound to the audience data model.
+  distribution: in-platform
+  docs:
+  - https://gud.resulticks.com/platform-guide/preferences/setup/form-generator/overview/
+  - https://gud.resulticks.com/platform-guide/preferences/setup/form-generator/create-a-subscription-kyc-form/
+- family: mobile-sdk
+  description: >-
+    Native and cross-platform mobile SDKs providing push/in-app notification
+    delivery, screen and custom-event tracking, deep linking, QR handling and
+    location updates. Catalogued in packages/ as registry artifacts; listed here
+    because they render UI surfaces (in-app overlays, inbox messaging).
+  see: packages/resulticks-packages.yml
+  docs:
+  - https://gud.resulticks.com/SDK-reference/mobile-SDK-integration-flutter/introduction/
+  - https://gud.resulticks.com/SDK-reference/mobile-SDK-integration-cordova/introduction/
+  - https://gud.resulticks.com/SDK-reference/SDK-reference-guide/SDK-capabilities/mobile-capabilities/
+summary:
+  family_count: 5
+  registry_published_components: 4
+  loader_libraries:
+  - react
+x-evidence:
+- url: https://registry.npmjs.org/-/v1/search?text=resulticks
+  status: 200
+- url: https://gud.resulticks.com/SDK-reference/introduction/
+  status: 200
+- url: https://resu.io/
+  status: 200

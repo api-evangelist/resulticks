@@ -1,0 +1,47 @@
+generated: '2026-08-13'
+method: derived
+status: none
+note: >-
+  Resulticks publishes no MCP server, and there is no OpenAPI to derive a
+  candidate tool list from. No tools are listed below because inventing them
+  from prose documentation would fabricate an input contract that does not
+  exist. This file records the probe result so a later round does not repeat it.
+deployment:
+  mode: none
+  endpoint: null
+  install: null
+  package: null
+  auth: unknown
+  verified: probed
+server: null
+tools: []
+probes:
+- url: https://mcp.resulticks.com/
+  status: 0
+  note: DNS does not resolve
+- url: https://www.go.resul.io/mcp
+  status: 404
+- url: https://gud.resulticks.com/.well-known/ai-plugin.json
+  status: 200
+  note: soft-404 — identical 2917-byte HTML application shell, not a manifest
+- registry: npm
+  query: resulticks
+  result: >-
+    No MCP package. The @resulticks npm scope holds only React UI component
+    libraries and the react-native tracking SDK.
+blockers:
+- >-
+  No OpenAPI definition exists, so no candidate tool could be derived with a
+  real inputSchema.
+- >-
+  The documented API base host apis.resu.io refused TCP on 443 and 80 from the
+  public internet on 2026-08-13, so no live surface could be introspected.
+- >-
+  The one fully-qualified endpoint published (GET
+  https://apis.resu.io/Apirsltks/Credentials) is a credentials exchange, not a
+  callable capability.
+x-evidence:
+- url: https://mcp.resulticks.com/
+  status: 0
+- url: https://www.go.resul.io/mcp
+  status: 404

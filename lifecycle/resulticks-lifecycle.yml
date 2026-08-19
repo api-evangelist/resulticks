@@ -1,0 +1,64 @@
+generated: '2026-08-13'
+method: searched
+source: https://gud.resulticks.com/sitemap.xml
+note: >-
+  The Resulticks documentation portal publishes 338 URLs. None of them is a
+  changelog, release-notes, versioning-policy, deprecation-policy, SLA, or
+  status page. Recorded as an honest absence — NO StatusPage and NO Deprecation
+  pointer is emitted in apis.yml, because neither surface exists.
+versioning:
+  scheme: none-published
+  current: null
+  docs: null
+  evidence: >-
+    The one fully-qualified path documented on the portal
+    (https://apis.resu.io/Apirsltks/Credentials) carries no version segment, and
+    no header-, date-, or path-based versioning policy is published.
+deprecation:
+  policy_url: null
+  sunset_header: false
+  deprecation_header: false
+  evidence: >-
+    No deprecation or sunset policy is published; RFC 8594 Sunset/Deprecation
+    headers are not mentioned.
+sla:
+  url: null
+  uptime_target: null
+status_page:
+  url: null
+  probed:
+  - url: https://status.resulticks.com/
+    status: 000
+    note: DNS does not resolve
+  - url: https://status.resu.io/
+    status: 000
+    note: DNS does not resolve
+changelog:
+  url: null
+  evidence: >-
+    No changelog or release-notes path appears in the docs sitemap. The only
+    dated, publicly-visible release signal for Resulticks is package-registry
+    metadata — see packages/resulticks-packages.yml, where the newest
+    first-party release is @resulticks/trustsignal-rcs 0.18.0 (2026-08-12).
+deprecated_operations: []
+sdk_currency:
+  note: >-
+    Client SDK decay is the only measurable lifecycle signal available. The
+    Cordova iOS plugin (reiossdk-plugin 1.0.7) last shipped 2020-04-03 while its
+    documentation is still presented as current, and the CocoaPods pod REIOSSDK
+    has exactly one published version (3.0.0, 2022-07-07) despite iOS
+    distribution having moved to Swift Package Manager in 2026.
+  see: packages/resulticks-packages.yml
+gaps:
+- No changelog or release notes.
+- No status page (both conventional hostnames fail to resolve).
+- No versioning policy or version identifier.
+- No deprecation/sunset policy.
+- No published SLA or uptime target.
+x-evidence:
+- url: https://gud.resulticks.com/sitemap.xml
+  status: 200
+- url: https://status.resulticks.com/
+  status: 0
+- url: https://status.resu.io/
+  status: 0

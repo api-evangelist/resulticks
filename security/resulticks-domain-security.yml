@@ -1,13 +1,20 @@
-generated: '2026-07-20'
+generated: '2026-08-13'
 method: probed
 source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
 hosts:
 - host: www.resulticks.com
   https: true
   tls_version: TLSv1.3
-  cert_expires: Sep  7 23:51:19 2026 GMT
+  cert_expires: Nov  6 09:55:20 2026 GMT
   hsts: true
   hsts_max_age: 31536000
+- host: gud.resulticks.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Nov  6 09:55:20 2026 GMT
+  hsts: false
+- host: apis.resu.io
+  https: false
 domains:
 - domain: resulticks.com
   dnssec: false
@@ -15,3 +22,9 @@ domains:
   spf: true
   dmarc: true
   dmarc_policy: reject
+- domain: resu.io
+  dnssec: false
+  caa: []
+  spf: true
+  dmarc: true
+  dmarc_policy: quarantine
