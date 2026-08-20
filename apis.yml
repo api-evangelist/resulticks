@@ -76,6 +76,11 @@ apis:
   tags:
   - Marketing Automation
   - Audience
+  - Communications
+  - Analytics
+  tags_raw:
+  - Marketing Automation
+  - Audience
   - Communication
   - Analytics
   properties:
