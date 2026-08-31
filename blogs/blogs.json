@@ -2,6 +2,13 @@
   "repo": "resulticks",
   "feeds": [
     {
+      "source": "https://gud.resulticks.com/blog/rss.xml",
+      "feed_url": "https://gud.resulticks.com/blog/rss.xml",
+      "title": "",
+      "saved": 0,
+      "method": "feed"
+    },
+    {
       "source": "https://gud.resulticks.com/Get-started/introduction/",
       "feed_url": "https://gud.resulticks.com/blog/rss.xml",
       "title": "",
@@ -10,5 +17,5 @@
     }
   ],
   "post_count": 0,
-  "fetched": "2026-08-22T20:20:02Z"
+  "fetched": "2026-08-30T22:33:40Z"
 }
