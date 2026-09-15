@@ -1,21 +1,16 @@
 aid: resulticks
 name: Resulticks
-description: >-
-  Resulticks is an enterprise omnichannel marketing automation and audience
-  engagement platform, operating under the RESUL brand. It pairs a
-  cookie-independent customer data platform with real-time campaign
-  orchestration across email, SMS, WhatsApp, RCS, LINE, web and mobile push,
-  in-app messaging, voice, social and paid channels, plus audience scoring,
-  Audience 360 journey analytics, a form generator and AI-assisted audience
-  building. Resulticks publishes a public documentation portal at
-  gud.resulticks.com carrying a REST API reference — account setup, data
-  ingestion, audience and target-list management, communication creation and
-  scheduling, and response analytics — against the base domain
-  https://apis.resu.io, alongside web, Flutter, React Native, Cordova and iOS
-  SDK guides. It ships no machine-readable API definition (no OpenAPI,
-  AsyncAPI, GraphQL schema or MCP server), no public pricing, and no status or
-  changelog page; the API host itself is not reachable from the public internet
-  and is customer-scoped. Resulticks is backed by 500 Global.
+description: Resulticks is an enterprise omnichannel marketing automation and audience engagement platform,
+  operating under the RESUL brand. It pairs a cookie-independent customer data platform with real-time
+  campaign orchestration across email, SMS, WhatsApp, RCS, LINE, web and mobile push, in-app messaging,
+  voice, social and paid channels, plus audience scoring, Audience 360 journey analytics, a form generator
+  and AI-assisted audience building. Resulticks publishes a public documentation portal at gud.resulticks.com
+  carrying a REST API reference — account setup, data ingestion, audience and target-list management,
+  communication creation and scheduling, and response analytics — against the base domain https://apis.resu.io,
+  alongside web, Flutter, React Native, Cordova and iOS SDK guides. It ships no machine-readable API definition
+  (no OpenAPI, AsyncAPI, GraphQL schema or MCP server), no public pricing, and no status or changelog
+  page; the API host itself is not reachable from the public internet and is customer-scoped. Resulticks
+  is backed by 500 Global.
 url: https://raw.githubusercontent.com/api-evangelist/resulticks/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -68,20 +63,16 @@ tags:
 - WhatsApp
 image: https://www.resulticks.com/images/apple-touch-icon.png
 apis:
-- aid: resulticks-web-api
+- aid: resulticks:resulticks-web-api
   name: Resul Web API
-  description: >-
-    The Resul (Resulticks) Web API is a JSON REST API served from the
-    https://apis.resu.io base domain, documented publicly at gud.resulticks.com.
-    Its call surface is grouped into six documented categories: API Keys
-    (accounts and permissions on Resul objects), Account Setup (account
-    specification for communication execution), Data Ingestion (audience lists,
-    suppression rules, recipient records), Communication (communication types,
-    setup, design and scheduling), Communication response analytics
-    (consolidated metrics for reporting), and Statistical sharing (pushing
-    communication metrics to client data sources). No OpenAPI definition is
-    published; the API host does not accept connections from the public
-    internet.
+  description: 'The Resul (Resulticks) Web API is a JSON REST API served from the https://apis.resu.io
+    base domain, documented publicly at gud.resulticks.com. Its call surface is grouped into six documented
+    categories: API Keys (accounts and permissions on Resul objects), Account Setup (account specification
+    for communication execution), Data Ingestion (audience lists, suppression rules, recipient records),
+    Communication (communication types, setup, design and scheduling), Communication response analytics
+    (consolidated metrics for reporting), and Statistical sharing (pushing communication metrics to client
+    data sources). No OpenAPI definition is published; the API host does not accept connections from the
+    public internet.'
   humanURL: https://gud.resulticks.com/API-reference/introduction/
   baseURL: https://apis.resu.io
   tags:
