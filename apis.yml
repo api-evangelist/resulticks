@@ -54,6 +54,22 @@ tags:
 - Customer Data Platform
 - MarTech
 - Campaign Management
+- Audiences
+- Analytics
+- Messaging
+- SMS
+- Email
+- Push Notifications
+- WhatsApp
+tags_raw:
+- Company
+- Marketing
+- Marketing Automation
+- Omnichannel
+- Customer Engagement
+- Customer Data Platform
+- MarTech
+- Campaign Management
 - Audience
 - Analytics
 - Messaging
@@ -77,7 +93,7 @@ apis:
   baseURL: https://apis.resu.io
   tags:
   - Marketing Automation
-  - Audience
+  - Audiences
   - Communications
   - Analytics
   tags_raw:
